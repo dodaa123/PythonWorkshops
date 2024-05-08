@@ -4,7 +4,7 @@ import pandas as pd
 
 def generate_wiener_process(
     n_paths: int, n_steps: int, dt: float, sigma: float, mu: float
-) -> np.array:
+) -> pd.DataFrame:
     """Generate paths of the Wiener Process.
 
     Args:
@@ -17,7 +17,7 @@ def generate_wiener_process(
     Returns:
         pd.DataFrame: Data of shape (n_paths, n_steps + 1) containing the Wiener process paths.
             Each row represents a different path, and each column represents a time step.
-            The first row is the initial value (usually zero for Wiener processes).
+            The first rozmieniamually zero for Wiener processes).
     """
     paths = np.zeros((n_paths, n_steps + 1))
     t = np.linspace(0.0, dt * (n_steps + 1), n_steps + 1)
